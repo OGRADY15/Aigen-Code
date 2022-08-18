@@ -1,0 +1,105 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hw8prob9ogrady;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ograd
+ */
+public class HW8Prob9Ogrady {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+public static void main(String[] args) {
+        
+        Scanner Keyboard= new Scanner(System.in);
+        
+        GeometryClass math= new GeometryClass();
+        
+        System.out.println("1. Calculate the Area of a Circle"
+                + "\n2. Calculate the Area of a Rectangle"
+                + "\n3. Calculate the Area of a Triangle"
+                + "\n4. Quit");
+        
+        int geometryCalculatorType;
+        
+        geometryCalculatorType = Keyboard.nextInt();
+        
+        if(geometryCalculatorType == 1)
+        {
+            System.out.println("Please type in what the radius of your circle will be...");
+            double circRadius = Keyboard.nextDouble();
+            
+            if(circRadius > 0)
+            {
+                System.out.println("The area of your circle is... " + math.circFormula(circRadius));
+            }
+            
+            else
+            {
+                System.out.println("Sorry, but you need to type in a positive number for the radius!");
+            }
+            
+        }
+        
+        else if(geometryCalculatorType == 2)
+        {
+            System.out.println("Please type in how wide your rectangle will be...");
+            double recWide = Keyboard.nextDouble();
+            
+            System.out.println("Please type in how long your rectangle will be...");
+            double recLong = Keyboard.nextDouble();
+            
+            
+            if(recWide >0 && recLong>0)
+            {
+                System.out.println("The area of your rectangle is... " + math.recFormula(recWide,recLong));
+            }
+            
+            else
+            {
+                 System.out.println("Sorry, but you need to type in a positive nnumber for both of the values!");
+            }
+            
+        }
+        else if(geometryCalculatorType == 3)
+        {
+            
+            
+            System.out.println("Please type in how tall the Heighth of your triangle will be... ");
+            double triHeighth = Keyboard.nextDouble();
+            
+            System.out.println("Please type in how long the base of your triangle will be... ");
+            double triBase = Keyboard.nextDouble();
+            
+             if(triHeighth >0 && triBase >0)
+             {
+                 System.out.println("Area of triangle : "+math.triFormula(triHeighth, triBase));
+             }
+             
+             else 
+             {
+                 System.out.println("Sorry, but you need to type in a positive nnumber for both of the values!");
+             }
+        }
+         else if(geometryCalculatorType == 4)
+         {
+            System.exit(1);
+         }
+         
+         
+         
+        else
+         {
+            System.out.println("Sorry, but you need to pick one of the values listed above! (1, 2, 3 or 4)");
+          }
+    }
+    
+}
